@@ -1,4 +1,4 @@
 ### lunatic
-> Documentation generator for Lua code written in Lua.
+> Documentation generator for Lua code.
 
 Usage: `lunatic doc`
