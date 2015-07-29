@@ -1,0 +1,27 @@
+{
+  "name": "lunatic",
+  "version": "0.1.0",
+  "description": "Documentation generator for Lua code",
+  "preferGlobal": true,
+  "main": "lunatic.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stpettersens/lunatic.git"
+  },
+  "keywords": [
+    "lua",
+    "documentation",
+    "generator",
+    "tool",
+    "utility"
+  ],
+  "author": "Sam Saint-Pettersen <s.stpettersen+github@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/stpettersens/lunatic/issues"
+  },
+  "homepage": "https://github.com/stpettersens/lunatic"
+}

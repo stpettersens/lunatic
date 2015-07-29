@@ -1,5 +1,5 @@
 -- Lunatic
--- Documentation generator for Lua code written in Lua.
+-- Documentation generator for Lua code.
 -- Copyright 2015 Sam Saint-Pettersen
 -- Released under the MIT License.
 
@@ -11,10 +11,10 @@ Lunatic.__index = Lunatic
 function Lunatic.create()
 	local self = setmetatable({}, Lunatic)
 	self.docstrings = {}
-	self.class = ''
 	self.signatures = {}
 	self.descs = {}
 	self.methods = {}
+	self.class = ''
 	return self
 end
 
@@ -61,6 +61,7 @@ function Lunatic:tables()
 	for k, v in pairs(self.methods) do
 		print(v)
 	end
+	print('\nSignatures:')
 	for k, v in pairs(self.signatures) do
 		print(v)
 	end
