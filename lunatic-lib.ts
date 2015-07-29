@@ -45,7 +45,7 @@ class Lunatic {
 	 * Lunatic implements the documentation generator itself.
 	 * @constructor
 	*/
-	public constuctor() {
+	constuctor() {
 		this.docstrings = new Array<string>();
 		this.signatures = new Array<string>();
 		this.descs = new Array<string>();
