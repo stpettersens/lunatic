@@ -7,3 +7,4 @@
 import Lunatic = require('./lunatic-lib');
 var lunatic = new Lunatic();
 lunatic.parse(process.argv[2]);
+lunatic.tables();

@@ -23,7 +23,25 @@ class Lunatic {
 	 * @param {string} file - Lua file to parse and document.
 	*/
 	public parse(file: string): void {
-
+		this.descs = new Array<string>();
+		this.methods = new Array<string>();
+		this.docstrings = new Array<string>();
+		this.signatures = new Array<string>();
+		var data: any = fs.readFileSync(file, 'utf8');
+		var lines: string[] = data.toString().split('\n');
+		for(var i: number = 0; i < lines.length; i++) {
+			if(lines[i] != '') {
+				var pattn: RegExp = /^-/;
+				if(pattn.test(lines[i])) {
+					this.docstrings.push(lines[i]);
+				}
+				pattn = /^function/;
+				if(pattn.test(lines[i])) {
+					var matches: string[] = lines[i].match(/(function) ([\.\:\w]+)/);
+					this.signatures.push(matches[2]);
+				}
+			}
+		}
 	}
 
 	public tables(): void {
@@ -39,17 +57,6 @@ class Lunatic {
 		for(var i: number = 0; i < this.signatures.length; i++) {
 			console.log(this.signatures[i]);
 		}
-	}
-
-	/**
-	 * Lunatic implements the documentation generator itself.
-	 * @constructor
-	*/
-	constuctor() {
-		this.docstrings = new Array<string>();
-		this.signatures = new Array<string>();
-		this.descs = new Array<string>();
-		this.methods = new Array<string>();
 	}
 }
 export = Lunatic;
